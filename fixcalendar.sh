@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 # this script requires use of opensh
 # delete duplicate bdays:
 sqlite3 /home/user/.calendar/db "DELETE FROM Components WHERE ComponentId IN (SELECT min(ComponentId) FROM Components WHERE Category = 'BIRTHDAY' GROUP BY Summary HAVING count(*) > 1);"
